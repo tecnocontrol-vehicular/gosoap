@@ -160,7 +160,7 @@ func recursiveEncode(hm interface{}) {
 				}
 			}   			
 		}
-			if v.Len() == 1 {				
+		if v.Len() == 1 {				
 			//Event requeste con evento
 			for _, key := range v.MapKeys() {
 				if key.String() == "Event" {
@@ -176,12 +176,27 @@ func recursiveEncode(hm interface{}) {
 					break
 				}
 			} 
+
+			for _, key := range v.MapKeys() {
+				if key.String() == "item" {
+					t := xml.StartElement{
+						Name: xml.Name{
+							Space: "",
+							Local: key.String(),
+						},
+					}
+					tokens = append(tokens, t)
+					recursiveEncode(v.MapIndex(key).Interface())
+					tokens = append(tokens, xml.EndElement{Name: t.Name})
+					break
+				}
+			} 
 				
-			} 		
+		} 		
 			
 			
 			
-			if v.Len() == 11 {				
+		if v.Len() == 11 {				
 			//altitude requeste con evento
 			for _, key := range v.MapKeys() {
 				if key.String() == "altitude" {
@@ -363,9 +378,242 @@ func recursiveEncode(hm interface{}) {
 			}   
 
       
-			}
+		}
 		
 
+		if v.Len() == 3 {		
+			for _, key := range v.MapKeys() {
+				if key.String() == "user" {			
+					t := xml.StartElement{
+						Name: xml.Name{
+							Space: "",
+							Local: key.String(),
+						},
+					}
+					tokens = append(tokens, t)
+					recursiveEncode(v.MapIndex(key).Interface())
+					tokens = append(tokens, xml.EndElement{Name: t.Name})
+					break
+				}
+			}
+
+
+			for _, key := range v.MapKeys() {
+				if key.String() == "pass" {			
+					t := xml.StartElement{
+						Name: xml.Name{
+							Space: "",
+							Local: key.String(),
+						},
+					}
+					tokens = append(tokens, t)
+					recursiveEncode(v.MapIndex(key).Interface())
+					tokens = append(tokens, xml.EndElement{Name: t.Name})
+					break
+				}
+			}
+
+
+			for _, key := range v.MapKeys() {
+				if key.String() == "arrayOfUnits" {			
+					t := xml.StartElement{
+						Name: xml.Name{
+							Space: "",
+							Local: key.String(),
+						},
+					}
+					tokens = append(tokens, t)
+					recursiveEncode(v.MapIndex(key).Interface())
+					tokens = append(tokens, xml.EndElement{Name: t.Name})
+					break
+				}
+			}
+
+		}
+
+		if v.Len() == 12 {	
+
+			for _, key := range v.MapKeys() {
+				if key.String() == "placa" {			
+					t := xml.StartElement{
+						Name: xml.Name{
+							Space: "",
+							Local: key.String(),
+						},
+					}
+					tokens = append(tokens, t)
+					recursiveEncode(v.MapIndex(key).Interface())
+					tokens = append(tokens, xml.EndElement{Name: t.Name})
+					break
+				}
+			}
+
+			for _, key := range v.MapKeys() {
+				if key.String() == "economico" {			
+					t := xml.StartElement{
+						Name: xml.Name{
+							Space: "",
+							Local: key.String(),
+						},
+					}
+					tokens = append(tokens, t)
+					recursiveEncode(v.MapIndex(key).Interface())
+					tokens = append(tokens, xml.EndElement{Name: t.Name})
+					break
+				}
+			}
+
+			for _, key := range v.MapKeys() {
+				if key.String() == "timestamp" {			
+					t := xml.StartElement{
+						Name: xml.Name{
+							Space: "",
+							Local: key.String(),
+						},
+					}
+					tokens = append(tokens, t)
+					recursiveEncode(v.MapIndex(key).Interface())
+					tokens = append(tokens, xml.EndElement{Name: t.Name})
+					break
+				}
+			}
+
+			for _, key := range v.MapKeys() {
+				if key.String() == "latitude" {			
+					t := xml.StartElement{
+						Name: xml.Name{
+							Space: "",
+							Local: key.String(),
+						},
+					}
+					tokens = append(tokens, t)
+					recursiveEncode(v.MapIndex(key).Interface())
+					tokens = append(tokens, xml.EndElement{Name: t.Name})
+					break
+				}
+			}
+
+			for _, key := range v.MapKeys() {
+				if key.String() == "longitude" {			
+					t := xml.StartElement{
+						Name: xml.Name{
+							Space: "",
+							Local: key.String(),
+						},
+					}
+					tokens = append(tokens, t)
+					recursiveEncode(v.MapIndex(key).Interface())
+					tokens = append(tokens, xml.EndElement{Name: t.Name})
+					break
+				}
+			}
+
+			for _, key := range v.MapKeys() {
+				if key.String() == "height" {			
+					t := xml.StartElement{
+						Name: xml.Name{
+							Space: "",
+							Local: key.String(),
+						},
+					}
+					tokens = append(tokens, t)
+					recursiveEncode(v.MapIndex(key).Interface())
+					tokens = append(tokens, xml.EndElement{Name: t.Name})
+					break
+				}
+			}
+
+			for _, key := range v.MapKeys() {
+				if key.String() == "speed" {			
+					t := xml.StartElement{
+						Name: xml.Name{
+							Space: "",
+							Local: key.String(),
+						},
+					}
+					tokens = append(tokens, t)
+					recursiveEncode(v.MapIndex(key).Interface())
+					tokens = append(tokens, xml.EndElement{Name: t.Name})
+					break
+				}
+			}
+
+			for _, key := range v.MapKeys() {
+				if key.String() == "course" {			
+					t := xml.StartElement{
+						Name: xml.Name{
+							Space: "",
+							Local: key.String(),
+						},
+					}
+					tokens = append(tokens, t)
+					recursiveEncode(v.MapIndex(key).Interface())
+					tokens = append(tokens, xml.EndElement{Name: t.Name})
+					break
+				}
+			}
+
+			for _, key := range v.MapKeys() {
+				if key.String() == "sats" {			
+					t := xml.StartElement{
+						Name: xml.Name{
+							Space: "",
+							Local: key.String(),
+						},
+					}
+					tokens = append(tokens, t)
+					recursiveEncode(v.MapIndex(key).Interface())
+					tokens = append(tokens, xml.EndElement{Name: t.Name})
+					break
+				}
+			}
+
+			for _, key := range v.MapKeys() {
+				if key.String() == "event" {			
+					t := xml.StartElement{
+						Name: xml.Name{
+							Space: "",
+							Local: key.String(),
+						},
+					}
+					tokens = append(tokens, t)
+					recursiveEncode(v.MapIndex(key).Interface())
+					tokens = append(tokens, xml.EndElement{Name: t.Name})
+					break
+				}
+			}
+
+			for _, key := range v.MapKeys() {
+				if key.String() == "temp" {			
+					t := xml.StartElement{
+						Name: xml.Name{
+							Space: "",
+							Local: key.String(),
+						},
+					}
+					tokens = append(tokens, t)
+					recursiveEncode(v.MapIndex(key).Interface())
+					tokens = append(tokens, xml.EndElement{Name: t.Name})
+					break
+				}
+			}
+
+			for _, key := range v.MapKeys() {
+				if key.String() == "unitType" {			
+					t := xml.StartElement{
+						Name: xml.Name{
+							Space: "",
+							Local: key.String(),
+						},
+					}
+					tokens = append(tokens, t)
+					recursiveEncode(v.MapIndex(key).Interface())
+					tokens = append(tokens, xml.EndElement{Name: t.Name})
+					break
+				}
+			}
+
+		}
 	case reflect.Slice:
 		for i := 0; i < v.Len(); i++ {
 			recursiveEncode(v.Index(i).Interface())
